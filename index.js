@@ -7,8 +7,32 @@ const dates = [
   "2020-02-03 UTC+7", // 1580662800 (epoch time, dalam detik)
 ];
 
+const sortDate = (inDate)=>{
+  buff=[];
+  for(i=0; i<inDate.length; i++){
+    buff.push(Date.parse(inDate[i])/1000);    
+  }
+  buff.sort();
+  return buff.join("-");
+
+}
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (inDate,pos)=>{  
+  let result = "";
+  if (pos == null){
+
+return sortDate(inDate);
+  }  else{
+result=Date.parse(inDate[pos])/1000;
+    return result.toString();
+  }
+  
+  // console.log("argument count " + arguments.length);
+  // console.log(arguments);
+// console.log(Date.parse(inDate[pos]))
+// return result;
+};
+
 
 // ! JANGAN DIMODIFIKASI
 (() => {
